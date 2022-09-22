@@ -1,3 +1,5 @@
+// GET TO STYLE THIS COMPONENT
+
 export const GameComponent = () => {
     return (
         <div>

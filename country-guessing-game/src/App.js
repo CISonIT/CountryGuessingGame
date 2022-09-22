@@ -7,8 +7,8 @@ import { GamePage } from "./Pages/GamePage"
 function App() {
   return (
     <div>
-      <MainPage />
-      {/* <GamePage /> */}
+      { <MainPage /> }
+      { <GamePage /> }
     </div>
   );
 }

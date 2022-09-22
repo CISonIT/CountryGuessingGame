@@ -1,5 +1,29 @@
-.main-page-container {
-    width: 100vw;
+* {
+    font-family: 'Geo', sans-serif;
+}
+
+#main-image {
+    background-image: url("../Sources/earth.jpg");
     height: 100vh;
-    /* background-image: url("../Sources/earth.jpg"); */
+    animation: bgc-effect linear infinite 50s;
+    background-position: center;
+    background-size: cover;
+}
+
+@keyframes bgc-effect {
+    0% {
+        background-position: 0% 0%;
+    }
+    20% {
+        background-position: 10% 20%;
+    }
+    50% {
+        background-position: 40% 30%;
+    }
+    80% {
+        background-position: 10% 20%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
 }
