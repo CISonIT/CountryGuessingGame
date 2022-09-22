@@ -6,8 +6,8 @@ import { GamePage } from "./Pages/GamePage"
 
 function App() {
   return (
-    <div>
-      { <MainPage /> }
+    <div className="bg-secondary">
+      {/* { <MainPage /> } */}
       { <GamePage /> }
     </div>
   );

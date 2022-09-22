@@ -10,6 +10,15 @@
     background-size: cover;
 }
 
+#chartdiv {
+    width: 700px;
+    height: 700px;
+}
+
+#chartdiv:hover {
+    cursor: pointer;
+}
+
 @keyframes bgc-effect {
     0% {
         background-position: 0% 0%;
