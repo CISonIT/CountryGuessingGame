@@ -1,8 +1,9 @@
 // GET TO STYLE THIS COMPONENT
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import * as am5 from "@amcharts/amcharts5";
 import * as am5map from "@amcharts/amcharts5/map";
 import am5geodata_worldHigh from "@amcharts/amcharts5-geodata/worldHigh";
+import am5geodata_data_countries2 from "@amcharts/amcharts5-geodata/data/countries2";
 
 export const GameComponent = () => {
 
@@ -52,6 +53,18 @@ export const GameComponent = () => {
 
         return () => {root.dispose()}
     }, [])
+
+    const [countriesArray, setCountriesArray] = useState([]);
+
+    useEffect(() => {
+        let isMounted = true;
+        
+        console.log(Object.keys(am5geodata_data_countries2).length)
+        // console.log(am5geodata_data_countries2)
+        // console.log(countriesArray)
+
+        return () => isMounted = false
+    },[])
 
     return (
         <div className="container d-flex flex-column bg-secondary text-light align-items-center justify-content-center text-center">

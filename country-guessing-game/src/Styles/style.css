@@ -5,7 +5,7 @@
 #main-image {
     background-image: url("../Sources/earth.jpg");
     height: 100vh;
-    animation: bgc-effect linear infinite 50s;
+    animation: bgc-effect linear infinite 40s;
     background-position: center;
     background-size: cover;
 }
@@ -21,18 +21,24 @@
 
 @keyframes bgc-effect {
     0% {
-        background-position: 0% 0%;
+        background-position: 6% 0%;
+    }
+    10% {
+        background-position: 12% 2%;
     }
     20% {
-        background-position: 10% 20%;
+        background-position: 21% 23%;
     }
     50% {
-        background-position: 40% 30%;
+        background-position: 42% 17%;
+    }
+    60% {
+        background-position: 32% 25%;
     }
     80% {
-        background-position: 10% 20%;
+        background-position: 18% 14%;
     }
     100% {
-        background-position: 0% 0%;
+        background-position: 3% 7%;
     }
 }

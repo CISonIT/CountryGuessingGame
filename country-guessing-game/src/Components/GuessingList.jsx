@@ -1,4 +1,13 @@
+import { useNavigate } from 'react-router-dom'
+
 export const GuessingList = () => {
+
+    const navigate = useNavigate();
+
+    const handleMainPageClick = () => {
+        navigate('/')
+    }
+
     return (
         <div className="container h-80 d-flex algin-items-center justify-content-center flex-column bg-secondary display-6 text-light">
             <span className="mb-3">Guessed Countries :</span>
@@ -33,7 +42,7 @@ export const GuessingList = () => {
             <div className="mt-3 w-100 d-flex justify-content-evenly button-group">
                 <button className="btn btn-dark btn-lg"> HINT? </button>
                 <button className="btn btn-dark btn-lg">Reset</button>
-                <button className="btn btn-dark btn-lg">Home</button>
+                <button onClick={() => {handleMainPageClick()}} className="btn btn-dark btn-lg">Home</button>
             </div>
         </div>
     )
