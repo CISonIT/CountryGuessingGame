@@ -6,6 +6,10 @@ import am5geodata_worldHigh from "@amcharts/amcharts5-geodata/worldHigh";
 import am5geodata_data_countries2 from "@amcharts/amcharts5-geodata/data/countries2";
 
 export const GameComponent = () => {
+    
+    const [wholeGeoData, setWholeGeoData] = useState([])
+    const [countriesArray, setCountriesArray] = useState([]);
+    const [random, setRandom] = useState();
 
     useEffect(() => {
         let root = am5.Root.new("chartdiv"); 
@@ -51,27 +55,37 @@ export const GameComponent = () => {
             fill: am5.color(0x677935)
         });
 
-        return () => {root.dispose()}
-    }, [])
+        setWholeGeoData(polygonSeries.data._values)
 
-    const [countriesArray, setCountriesArray] = useState([]);
+        return () => {root.dispose()}
+    }, []);
 
     useEffect(() => {
-        let isMounted = true;
-        
-        console.log(Object.keys(am5geodata_data_countries2).length)
-        // console.log(am5geodata_data_countries2)
-        // console.log(countriesArray)
+        wholeGeoData.map((el) => {
+            countriesArray.push(el.name)
+        })
 
-        return () => isMounted = false
-    },[])
+    }, [])
+
+    //Have to make useEffect async cuz data is loading slow and some variables don't have accessibility to data
+    //Maybe getting random name of country should be in another component, to not overload this component
+
+    const handleClick = () => {
+        setRandom(Math.floor(Math.random(countriesArray.length)))
+        console.log(countriesArray)
+        console.log(countriesArray.length)
+    }
 
     return (
         <div className="container d-flex flex-column bg-secondary text-light align-items-center justify-content-center text-center">
             <div id="chartdiv" className="h-80 w-80 pt-5 pb-5 mb-5"></div>
             <div className="mt-5 display-4">
-                COUNTRY TO FIND :
+                COUNTRY TO FIND : {random}
             </div>
+
+            {/* testing btn */}
+            <button onClick={()=>handleClick()}>TEST</button>
+
         </div>
     )
 }
